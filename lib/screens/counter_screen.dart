@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
-class CounterScreen extends StatelessWidget {
+class CounterScreen extends StatefulWidget {
   const CounterScreen({Key? key}) : super(key: key);
 
   @override
+  State<CounterScreen> createState() => _CounterScreenState();
+}
+
+class _CounterScreenState extends State<CounterScreen> {
+  int counter = 10;
+  @override
   Widget build(BuildContext context) {
     const tamanoFuente = TextStyle(fontSize: 25);
-
-    int counter = 10;
 
     return Scaffold(
       appBar: AppBar(
@@ -34,7 +38,7 @@ class CounterScreen extends StatelessWidget {
         child: const Icon(Icons.adb_sharp),
         onPressed: () {
           counter++;
-          print('Hello World: $counter');
+          setState(() {});
         },
       ),
     );
