@@ -5,6 +5,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const tamanoFuente = TextStyle(fontSize: 25);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Screen'),
@@ -13,8 +15,24 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[Text('Clicks Counter'), Text('0')],
+          children: const [
+            Text(
+              'Clicks Counter',
+              style: tamanoFuente,
+            ),
+            Text(
+              '0',
+              style: tamanoFuente,
+            )
+          ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.adb_sharp),
+        onPressed: () {
+          print('Hello World');
+        },
       ),
     );
   }
