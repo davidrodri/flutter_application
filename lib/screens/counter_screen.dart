@@ -34,13 +34,34 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.adb_sharp),
-        onPressed: () {
-          counter++;
-          setState(() {});
-        },
-      ),
+      floatingActionButton: CustomFloatingActions(),
+    );
+  }
+}
+
+class CustomFloatingActions extends StatelessWidget {
+  const CustomFloatingActions({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [
+        FloatingActionButton(
+          child: Icon(Icons.exposure_minus_1),
+          onPressed: null,
+        ),
+        FloatingActionButton(
+          child: Icon(Icons.restart_alt),
+          onPressed: null,
+        ),
+        FloatingActionButton(
+          child: Icon(Icons.plus_one),
+          onPressed: null,
+        ),
+      ],
     );
   }
 }
